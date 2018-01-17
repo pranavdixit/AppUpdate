@@ -36,7 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
             new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appcenterCrashes_whenToSendCrashes)),
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appcenterAnalytics_whenToEnableAnalytics)),
             new AppCenterReactNativePackage(MainApplication.this),
-            new CodePush("aSp0OM9j-rQyKwVtBnsFo4o4rtajH1REEhNEG", getApplicationContext(), BuildConfig.DEBUG)//add deployment key instead of null
+            new CodePush("aSp0OM9j-rQyKwVtBnsFo4o4rtajH1REEhNEG", getApplicationContext(), /*BuildConfig.DEBUG*/true)//add deployment key instead of null
       );
     }
 
