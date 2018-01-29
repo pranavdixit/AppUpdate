@@ -37,10 +37,10 @@ export default class App extends Component<{}> {
           Welcome to React Native! hello world!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js This is Pranav's code!
+          To get started, edit App.js
         </Text>
         <Text style={styles.instructions}>
-          Hello this is pranav.
+          I have written this code to test update on IOS.
         </Text>
         <Button
         onPress={this.onButtonPress}
