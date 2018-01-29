@@ -40,7 +40,7 @@ export default class App extends Component<{}> {
           To get started, edit App.js This is Pranav's code!
         </Text>
         <Text style={styles.instructions}>
-          I make my own changes and this is a new one.
+          Hello this is pranav.
         </Text>
         <Button
         onPress={this.onButtonPress}
