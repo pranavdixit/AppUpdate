@@ -12,9 +12,14 @@ target 'AppUpdate' do
   #React Native
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
+    'CxxBridge',
     'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
     'RCTText',
     'RCTNetwork',
+    'RCTImage',
+    'BatchedBridge',
+    'RCTAnimation',
+    'RCTLinkingIOS',
     'RCTWebSocket', # needed for debugging
     # Add any other subspecs you want to use in your project
   ]
@@ -48,4 +53,22 @@ target 'AppUpdate-tvOS' do
     # Pods for testing
   end
 
+  # post_install do |installer|
+  #   installer.pods_project.targets.each do |target|
+  #       if target.name == 'yoga'
+  #           target.build_configurations.each do |config|
+  #               config.build_settings['GCC_TREAT_WARNINGS_AS_ERRORS'] = 'NO'
+  #               config.build_settings['GCC_WARN_64_TO_32_BIT_CONVERSION'] = 'NO'
+  #           end
+  #       end
+  #   end
+  #   installer.pods_project.targets.each do |target|
+  #     if target.name == 'GLog'
+  #         target.build_configurations.each do |config|
+  #             config.build_settings['GCC_TREAT_WARNINGS_AS_ERRORS'] = 'NO'
+  #             config.build_settings['GCC_WARN_64_TO_32_BIT_CONVERSION'] = 'NO'
+  #         end
+  #     end
+  # end
+  # end
 end

@@ -36,6 +36,8 @@
     #endif
   jsCodeLocation = [NSURL
                             URLWithString:@"http://127.0.0.1:1111/index.bundle?platform=ios"];
+                            
+                            
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"AppUpdate"
