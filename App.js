@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Text,
   View,
+  FlatList,
   Button
 } from 'react-native';
 import codePush from "react-native-code-push";
@@ -26,7 +27,7 @@ const instructions = Platform.select({
 export default class App extends Component<{}> {
   render() {
 
-    codePush.sync({
+    codePush.sync({ 
       updateDialog: true,
       installMode: codePush.InstallMode.IMMEDIATEreact
   });
