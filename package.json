@@ -13,12 +13,16 @@
     "appcenter-analytics": "^1.1.0",
     "appcenter-crashes": "^1.1.0",
     "apphub": "^0.5.1",
+    "axios": "^0.18.0",
     "lodash": "^4.17.4",
     "lodash.throttle": "^4.1.1",
     "react": "16.2.0",
     "react-native": "0.52.2",
     "react-native-code-push": "^5.2.1",
-    "react-native-firebase": "^3.2.4"
+    "react-native-firebase": "^3.2.4",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-jest": "22.0.4",
