@@ -15,7 +15,8 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux'
 import {doSignIn} from './src/core/actions/SIgnInAction'
-import ApiReducer from './src/core/reducers/ApiReducer'
+import ApiReducer from './src/core/reducers/ApiReducer';
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -41,8 +42,8 @@ export class App extends Component<{}> {
 //     updateDialog: true,
 //     installMode: codePush.InstallMode.IMMEDIATEreact
 // });
-const{first_name, last_name} = ApiReducer
-console.log(first_name)
+const{first_name, last_name} = this.props.ApiReducer
+console.log("first  "+first_name)
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -54,11 +55,11 @@ console.log(first_name)
         <Text style={styles.instructions}>
           I have written this code to test update on IOS.
         </Text>
-        <Text style={styles.instructions} value={this.props.first_name}>
-        
+        <Text style={styles.instructions} >
+        {first_name}
       </Text>
       <Text style={styles.instructions}>
-      last_name
+      {last_name}
     </Text>
         <Button
         onPress={this.onButtonPress}
@@ -79,73 +80,16 @@ console.log(first_name)
     //     updateDialog: true,
     //     installMode: codePush.InstallMode.IMMEDIATEreact
     // });
-    console.log("test log on update press"+this.props)
+    var hello = this.props.ApiReducer
+    console.log("test log on update press"+this.props.ApiReducer)
   }
   
   signIn = () => {
     console.log("test signIn component")
-    this.props.login()
+    this.props.doSignIn("","")
   }
-  // onButtonPress(){
-  //   codePush.sync({
-  //       updateDialog: true,
-  //       installMode: codePush.InstallMode.IMMEDIATEreact
-  //   });
-  // }
 
 }
-
-// export const App = (props) => {
-// //   codePush.sync({ 
-// //     updateDialog: true,
-// //     installMode: codePush.InstallMode.IMMEDIATEreact
-// // });
-
-// onButtonPress = () => {
-//   // codePush.sync({
-//   //     updateDialog: true,
-//   //     installMode: codePush.InstallMode.IMMEDIATEreact
-//   // });
-//   console.log("test log on update press")
-// }
-
-// signIn = () => {
-//   props.login
-// }
-
-// const{first_name, last_name} = ApiReducer
-
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.welcome}>
-//         Welcome to React Native! hello world!
-//       </Text>
-//       <Text style={styles.instructions}>
-//         To get started, edit App.js
-//       </Text>
-//       <Text style={styles.instructions}>
-//         I have written this code to test update on IOS.
-//       </Text>
-//       <Text style={styles.instructions}>
-//       first_name
-//     </Text>
-//     <Text style={styles.instructions}>
-//     last_name
-//   </Text>
-//       <Button
-//       onPress={this.onButtonPress}
-//       title="Update"
-//       color="#841584"
-//       />
-//       <Button
-//       onPress={this.signIn}
-//       title="signIn"
-//       color="#841584"
-//       />
-//     </View>
-//   )
-// }
-
 // App = codePush(App);
 
 const styles = StyleSheet.create({
@@ -168,15 +112,25 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state){
+  console.log("mapStateToProps")
   return{
     ApiReducer: state.ApiReducer
   }
 }
 
 function mapDispatchToProps(dispatch){
-  return{
-    login : (id,pass)=>dispatch(doSignIn(id,pass))
-  }
+  console.log("mapDispatchToProps")
+    var login = (id,pass)=>dispatch=>doSignIn(id,pass)
+    return login
+  
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default (App = connect(
+  ({ ApiReducer = false }) => {
+    return { ApiReducer };
+  },
+  {   doSignIn
+  } 
+)(App));

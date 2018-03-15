@@ -1,8 +1,8 @@
 import {SIGN_IN,SHOW_LOADER,HIDE_LOADER,SIGN_IN_FAILURE} from '../CoreConstants';
 
 const initialState = {
-    first_name : "",
-    last_name :"",
+    first_name : "my",
+    last_name :"name",
     loading : false,
     error: false
 }
@@ -23,11 +23,10 @@ export default function ApiReducer(state= initialState, action){
 
         }
         case SIGN_IN:{
-            console.log("I am in reducer "+data.first_name)
             return{
                 ...state,
-                first_name: data.first_name,
-                last_name: data.last_name
+                first_name: action.data.first_name,
+                last_name: action.data.last_name
             }
         }
         case SIGN_IN_FAILURE:{
