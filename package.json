@@ -13,7 +13,7 @@
     "appcenter-analytics": "^1.1.0",
     "appcenter-crashes": "^1.1.0",
     "apphub": "^0.5.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
     "react": "16.2.0",
     "react-native": "0.52.2",
