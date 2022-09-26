@@ -17,7 +17,7 @@
     "lodash.throttle": "^4.1.1",
     "react": "16.2.0",
     "react-native": "0.52.2",
-    "react-native-code-push": "^5.2.1"
+    "react-native-code-push": "^5.7.0"
   },
   "devDependencies": {
     "babel-jest": "22.0.4",
